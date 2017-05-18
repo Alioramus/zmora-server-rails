@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:asked) }
+  it { should validate_presence_of(:question) }
+
+  it { should belong_to(:author) }
+  it { should have_many(:answer) }
 end
